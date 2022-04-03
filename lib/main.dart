@@ -49,14 +49,20 @@ class Home extends StatelessWidget {
                     IconWithLabel(
                       icon: Icons.call,
                       text: "Call",
+                      iconColor: Colors.red,
+                      textColor: Colors.lightGreen,
                     ),
                     IconWithLabel(
                       icon: Icons.navigation,
                       text: "Route",
+                      iconColor: Colors.blue,
+                      textColor: Colors.red,
                     ),
                     IconWithLabel(
                       icon: Icons.share,
                       text: "Share",
+                      iconColor: Colors.green,
+                      textColor: Colors.purpleAccent,
                     ),
                   ],
                 ),
@@ -73,10 +79,14 @@ class IconWithLabel extends StatelessWidget {
     Key? key,
     required this.icon,
     required this.text,
+    required this.iconColor,
+    required this.textColor,
   }) : super(key: key);
 
   final IconData icon;
   final String text;
+  final Color iconColor;
+  final Color textColor;
 
   @override
   Widget build(BuildContext context) {
@@ -86,14 +96,14 @@ class IconWithLabel extends StatelessWidget {
         Icon(
           icon,
           size: 30,
-          color: Colors.blue,
+          color: iconColor,
         ),
         SizedBox(
           height: 8.0,
         ),
         Text(
           text,
-          style: TextStyle(color: Colors.blue),
+          style: TextStyle(color: textColor),
         ),
       ],
     );
