@@ -46,90 +46,56 @@ class Home extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.call,
-                          size: 30,
-                          color: Colors.blue,
-                        ),
-                        SizedBox(
-                          height: 8.0,
-                        ),
-                        Text(
-                          "Call",
-                          style: TextStyle(color: Colors.blue),
-                        ),
-                      ],
+                    IconWithLabel(
+                      icon: Icons.call,
+                      text: "Call",
                     ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.navigation,
-                          size: 30,
-                          color: Colors.blue,
-                        ),
-                        SizedBox(
-                          height: 8.0,
-                        ),
-                        Text(
-                          "Route",
-                          style: TextStyle(color: Colors.blue),
-                        ),
-                      ],
+                    IconWithLabel(
+                      icon: Icons.navigation,
+                      text: "Route",
                     ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.share,
-                          size: 30,
-                          color: Colors.blue,
-                        ),
-                        SizedBox(
-                          height: 8.0,
-                        ),
-                        Text(
-                          "Share",
-                          style: TextStyle(color: Colors.blue),
-                        ),
-                      ],
-                    )
+                    IconWithLabel(
+                      icon: Icons.share,
+                      text: "Share",
+                    ),
                   ],
                 ),
-                // color: Colors.lightGreen,
-                // child: Column(
-                //   mainAxisAlignment: MainAxisAlignment.center,
-                //   crossAxisAlignment: CrossAxisAlignment.start,
-                //   children: [
-                //     Text("Hello, World!"),
-                //     Text("Hello, World!"),
-                //     Text("Hello, World!"),
-                //     Row(
-                //       children: [
-                //         Text("Hello, Razka"),
-                //         Text("Hello, Razka"),
-                //         Text("Hello, Razka")
-                //       ],
-                //     )
-                //   ],
-                // ),
               ),
             ],
           ),
-        )
-        // body: Container(
-        //   margin: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
-        //   padding: EdgeInsets.all(20.0),
-        //   color: Colors.indigo,
-        //   child: Icon(
-        //     Icons.headset,
-        //     color: Colors.white,
-        //     size: 100.0,
-        //   ),
-        // ),
-        );
+        ));
+  }
+}
+
+class IconWithLabel extends StatelessWidget {
+  // constractor
+  const IconWithLabel({
+    Key? key,
+    required this.icon,
+    required this.text,
+  }) : super(key: key);
+
+  final IconData icon;
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+          icon,
+          size: 30,
+          color: Colors.blue,
+        ),
+        SizedBox(
+          height: 8.0,
+        ),
+        Text(
+          text,
+          style: TextStyle(color: Colors.blue),
+        ),
+      ],
+    );
   }
 }
