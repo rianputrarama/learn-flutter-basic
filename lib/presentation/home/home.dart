@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kopi_pait/presentation/dashboard/dashboard.dart';
 import 'package:kopi_pait/widgets/icon_with_label.dart';
 
 class Home extends StatelessWidget {
@@ -25,7 +26,6 @@ class Home extends StatelessWidget {
             children: [
               Container(
                 child: ElevatedButton(
-                  onPressed: () {},
                   child: Text(
                     "Go To Dashboard",
                     style: TextStyle(
@@ -40,6 +40,10 @@ class Home extends StatelessWidget {
                     onPrimary: Colors.blue[700],
                     shadowColor: Colors.black,
                   ),
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Dashboard()));
+                  },
                 ),
               ),
               Container(
